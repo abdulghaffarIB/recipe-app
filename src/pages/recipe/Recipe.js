@@ -5,7 +5,6 @@ import RecipeInfo from "./RecipeInfo";
 import RecipeNutrition from "./RecipeNutrition";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
-import { oneMeal } from "../../data/tempData";
 import ErrorComponent from "../../components/Error";
 import Pending from "../../components/Pending";
 
