@@ -1,7 +1,7 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
-function Navbar({ light }) {
+function Navbar() {
   return (
     <nav className="flex justify-between items-center px-1 py-2 bg-white sm:py-3 sm:px-2">
       <Link
@@ -20,14 +20,6 @@ function Navbar({ light }) {
         >
           <CiSearch className="text-4xl  " />
         </Link>
-
-        {/* Menu icon */}
-        {/* <button
-          onClick={() => {}}
-          className="text-red-400 flex lg:hidden flex-col items-center justify-center p-1  "
-        >
-          <MdMenu className="text-4xl sm:text-5xl  font-medium" />
-        </button> */}
       </div>
     </nav>
   );

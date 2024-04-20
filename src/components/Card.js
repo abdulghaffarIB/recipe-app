@@ -1,9 +1,8 @@
 import React from "react";
 import bg from "../assets/bkck.jpg";
-import { capitaliseWordArray, titleCase } from "../utils/utils";
-import { diet } from "../data/rawdata";
+import { capitaliseWordArray } from "../utils/utils";
 import { IoTimeOutline } from "react-icons/io5";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 export function MenuCard() {
   return (
     <div className="flex flex-col bg-white">

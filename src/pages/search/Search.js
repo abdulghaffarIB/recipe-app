@@ -19,7 +19,6 @@ function Search() {
     prepTime: "",
   });
   const { data, error, pending } = useFetch(searchUrl);
-  // console.log(searchUrl);
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setSearchData((prev) => ({
@@ -42,7 +41,6 @@ function Search() {
         handleSubmit={handleSubmit}
       />
       <SearchGrid data={data} error={error} pending={pending} />
-      {/* <Footer /> */}
     </>
   );
 }

@@ -11,9 +11,6 @@ function SearchGrid({ data, error, pending }) {
   }
   return (
     <div className="max-w-5xl mt-12 mx-auto px-4">
-      {/* Grid Section */}
-      {/* {pending && <p>Loading...</p>}
-      {error && <p>Error loading page</p>} */}
       {data && (
         <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 items-stretch md:grid-cols-3  xl:grid-cols-3">
           {/* Card grid section */}

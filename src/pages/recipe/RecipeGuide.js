@@ -2,7 +2,6 @@ import React from "react";
 import { RecipeGuideCard } from "../../components/Card";
 
 function RecipeGuide({ item }) {
-  console.log(item);
   return (
     <div className="mt-8">
       {item.steps.map((d) => {
