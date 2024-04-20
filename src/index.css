@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #deceb9 url("../public/body.jpg") 0 0 repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.cool {
+  font-family: "Madimi One", sans-serif;
+}
+.cont-space {
+  margin-top: 3rem;
+}
+.cont-heading {
+  margin-bottom: 0.5rem;
+}
+.sml {
+  font-size: 12px;
+}
+.xxs {
+  font-size: 12px;
+}
+@media screen and (min-width: 640px) {
+  .cont-heading {
+    margin-bottom: 1rem;
+  }
+  .cont-space {
+    margin-top: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cont-heading {
+    margin-bottom: 1.5rem;
+  }
+  .cont-space {
+    margin-top: 7rem;
+  }
+  .xxs {
+    font-size: 14px;
+  }
+}
