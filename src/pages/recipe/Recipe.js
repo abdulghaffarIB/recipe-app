@@ -3,10 +3,11 @@ import Navbar from "../../components/Navbar";
 import RecipeInstructions from "./RecipeInstructions";
 import RecipeInfo from "./RecipeInfo";
 import RecipeNutrition from "./RecipeNutrition";
-import SuggestedRecipes from "./SuggestedRecipes";
-import Footer from "../../components/Footer";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
+import { oneMeal } from "../../data/tempData";
+import ErrorComponent from "../../components/Error";
+import Pending from "../../components/Pending";
 
 function Recipe() {
   const { id } = useParams();
@@ -15,35 +16,41 @@ function Recipe() {
   );
 
   const { data, pending, error } = useFetch(url);
-  console.log(data);
+  if (error) {
+    return <ErrorComponent />;
+  } else if (pending) {
+    return <Pending />;
+  }
   return (
-    <div>
-      {/* Recipe Section */}
-      {data && (
-        <>
-          <div className="max-w-5xl m-auto px-4 cont-space ">
-            <h1 className="cool text-2xl cont-heading xl:text-3xl">
-              {data.title}
-            </h1>
+    <>
+      <Navbar />
+      <main>
+        {/* Recipe Section */}
+        {data && (
+          <>
+            <div className="max-w-5xl m-auto px-4 cont-space ">
+              <h1 className="cool text-2xl cont-heading xl:text-3xl">
+                {data.title}
+              </h1>
 
-            {/* Recipe Grid */}
-            <div className="grid grid-cols-1 gap-x-8 gap-y-4 items-start xl:grid-cols-4">
-              <RecipeInstructions
-                image={data.image}
-                summary={data.summary}
-                data={data.analyzedInstructions[0]}
-              />
-              <RecipeInfo data={data.extendedIngredients} item={data} />
-              <RecipeNutrition data={data.nutrition.nutrients} />
+              {/* Recipe Grid */}
+              <div className="grid grid-cols-1 gap-x-8 gap-y-4 items-start md:grid-cols-5">
+                <RecipeInstructions
+                  image={data.image}
+                  summary={data.summary}
+                  data={data.analyzedInstructions[0]}
+                />
+                <div className="grid grid-cols-1 gap-y-8 md:col-span-2">
+                  <RecipeInfo data={data.extendedIngredients} item={data} />
+                  <RecipeNutrition data={data.nutrition.nutrients} />
+                </div>
+              </div>
+              {/* Suggested recipes */}
             </div>
-            {/* Suggested recipes */}
-          </div>
-          <SuggestedRecipes />
-        </>
-      )}
-
-      <Footer />
-    </div>
+          </>
+        )}
+      </main>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import bg from "../assets/bkck.jpg";
 import { capitaliseWordArray, titleCase } from "../utils/utils";
 import { diet } from "../data/rawdata";
+import { IoTimeOutline } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 export function MenuCard() {
   return (
@@ -42,7 +43,7 @@ export function RecipeGuideCard({ instruction, id }) {
 function Card({ item }) {
   const { title, servings, readyInMinutes, diets, image } = item;
   return (
-    <Link to={`/recipe/${item.id}`}>
+    <Link to={`/recipe/${item.id}`} className="items-stretch">
       <div className="flex flex-col bg-white  transition ease-in duration-75 hover:scale-105   ">
         {/* Image Section */}
         <div className="w-full">
@@ -50,26 +51,42 @@ function Card({ item }) {
         </div>
         {/* Text Section */}
         <div className="px-4 py-4">
-          <p className="text-sm font-semibold ">{title}</p>
+          <p
+            className="text-sm font-semibold whitespace-nowrap
+          text-ellipsis overflow-hidden "
+          >
+            {title}
+          </p>
           <hr className="my-2" />
           {/* Additional Info */}
           <div className="flex flex-col justify-start items-start text-xs text-gray-500">
+            <div className="flex items-center ">
+              <IoTimeOutline />
+              <p className="ml-1">
+                {" "}
+                <span className="text-black font-medium">
+                  {readyInMinutes} mins
+                </span>
+              </p>{" "}
+            </div>{" "}
             {/* Servings and time*/}
-            <div
-              className="flex flex-row justify-between items-center w-full mb-1"
-              style={{ fontSize: "13px" }}
-            >
+            <div className="flex flex-row justify-between items-center w-full ">
               {" "}
-              <span>Servings:{servings}</span>{" "}
-              <span>Time:{readyInMinutes}mins</span>{" "}
+              <p>
+                Servings:{" "}
+                <span className="font-bold text-black">{servings}</span>{" "}
+              </p>{" "}
             </div>
             {/* Diet */}
-            <div style={{ fontSize: "13px" }}>
-              {capitaliseWordArray(diets)}
-              {/* {diets.map((d) => (
-              <span className="mr-2">{titleCase(d)}</span>
-            ))} */}
+            <div className="w-full">
+              <p
+                className="whitespace-nowrap
+          text-ellipsis overflow-x-hidden "
+              >
+                {capitaliseWordArray(diets)}
+              </p>
             </div>
+            {/* Time */}
           </div>
         </div>
       </div>

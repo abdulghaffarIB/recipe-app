@@ -13,7 +13,7 @@ const InnerDisplay = styled.div`
 
 function RecipeInstructions({ image, summary, data }) {
   return (
-    <div className=" xl:col-span-2 ">
+    <div className=" md:col-span-3 ">
       {/* Image and description */}
       <div className="">
         {/* Image container  */}

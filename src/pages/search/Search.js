@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import SearchBar from "./SearchBar";
 import SearchGrid from "./SearchGrid";
-import Footer from "../../components/Footer";
 import useFetch from "../../hooks/useFetch";
-import { mealType } from "../../data/rawdata";
 import { n, s } from "../../utils/utils";
 
 function Search() {
@@ -21,7 +19,7 @@ function Search() {
     prepTime: "",
   });
   const { data, error, pending } = useFetch(searchUrl);
-  console.log(searchUrl);
+  // console.log(searchUrl);
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setSearchData((prev) => ({
@@ -36,7 +34,8 @@ function Search() {
     );
   };
   return (
-    <div>
+    <>
+      <Navbar />
       <SearchBar
         handleChange={handleChangeInput}
         data={searchData}
@@ -44,7 +43,7 @@ function Search() {
       />
       <SearchGrid data={data} error={error} pending={pending} />
       {/* <Footer /> */}
-    </div>
+    </>
   );
 }
 

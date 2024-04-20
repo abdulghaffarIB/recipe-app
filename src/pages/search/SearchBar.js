@@ -2,8 +2,8 @@ import React from "react";
 import { cuisine, mealType, intolerances, diet } from "../../data/rawdata";
 function SearchBar({ handleChange, data, handleSubmit }) {
   return (
-    <div className=" max-w-5xl mx-auto cont-space px-4 ">
-      <div className="bg-white flex flex-col items-start justify-start lg:flex-row ">
+    <section className=" max-w-5xl mx-auto cont-space px-4  ">
+      <div className="rounded bg-white flex flex-col items-start justify-start lg:flex-row  ">
         {/* Add Ingredients */}
         <div className=" w-full py-3 px-3 flex flex-col items-start lg:w-5/12 xl:px-4">
           <p className="  text-black mb-1 text-xs font-medium">
@@ -154,7 +154,7 @@ function SearchBar({ handleChange, data, handleSubmit }) {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

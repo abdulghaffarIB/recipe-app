@@ -13,7 +13,7 @@ function NutritionCard({ name, amount }) {
 }
 function RecipeNutrition({ data }) {
   return (
-    <div className="bg-white lg:w-1/2 xl:w-full">
+    <div className="bg-white ">
       {/* Nutrition title */}
       <div className="px-4 py-4 text-xs flex items-center">
         <p className="font-medium">Nutrition facts</p>

@@ -20,7 +20,7 @@ function DietCard({ diet }) {
 
 function Categories() {
   return (
-    <div className=" bg-white  ">
+    <div className=" hidden lg:block bg-white  ">
       <h1 className=" bg-white px-3 py-2 text-base font-medium ">Categories</h1>
       {/* Diets list */}
       <div className="flex flex-col items-start">

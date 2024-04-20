@@ -7,7 +7,7 @@ export function capitaliseWordArray(arr) {
     }
     return " " + a;
   });
-  return (arr.length > 0 ? "Diets: " : "") + newArr;
+  return (arr.length > 0 ? "Diets: " : "") + newArr.toString();
 }
 export function s(str, val) {
   if (val.length > 0) {

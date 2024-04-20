@@ -1,5 +1,4 @@
 import React from "react";
-import WinePairings from "./WinePairings";
 
 function RecipeInfoCard({ name, info }) {
   return (
@@ -32,7 +31,7 @@ function RRecipeInfoCard({ name, info }) {
 
 function RecipeInfo({ data, item }) {
   return (
-    <div className=" lg:grid lg:grid-cols-2 lg:gap-x-4 lg:gap-y-4 xl:grid-cols-1 ">
+    <div className=" md:col-span-2 ">
       <div>
         <div className="mb-8">
           <RRecipeInfoCard name=" Servings " info={item.servings} />
@@ -54,9 +53,7 @@ function RecipeInfo({ data, item }) {
       </div>
 
       {/* Wine pairings section */}
-      <div className="mt-8 lg:mt-0">
-        <WinePairings />
-      </div>
+      <div className="mt-8 lg:mt-0"></div>
     </div>
   );
 }
